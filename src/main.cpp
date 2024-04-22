@@ -27,7 +27,7 @@ void setup() {
     
     for(u_int i=0;i<=max_length;i++)
     {
-        espacios+=" ";
+        espacios+=" ";//espacios= espacios+" "
     }
     texto1=espacios+texto1;
     texto2=espacios+texto2;
@@ -68,6 +68,8 @@ default:
     break;
 }  
 
+//aca empieza la segunda máquina
+
 switch (state_scrolling_2)
 {
 case mostrar_texto:
@@ -96,6 +98,6 @@ default:
     Serial.print("ha ocurrido un error");
     break;
 }  
-
+//esto es un comentario de prueba 
 
 }
