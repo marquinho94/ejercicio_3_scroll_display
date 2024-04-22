@@ -2,8 +2,8 @@
 #include <LiquidCrystal.h>
 
 #define DISPLAY_LENGTH 16
-
-typedef enum ss{mostrar_texto, esperar, scroll}states_scrolling;
+//ESTO ES UN COMENTARIO PARA MOSTRAR EL USO DE GITHUB
+typedef enum {mostrar_texto, esperar, scroll}states_scrolling;
 states_scrolling state_scrolling_1, state_scrolling_2;
 String texto1="hola, estoy scroleando wiiiiiiiiiii aaaaa", texto2="debería ir pa' lotro lado ooooooohhhhhhh(sic) pero voy a la mitad de la velocidad";
 String subTexto1, subTexto2;
@@ -14,9 +14,9 @@ int max_length= DISPLAY_LENGTH;
 
 int offset1=0, offset2=0;
 
-bool espera_flag_1=false, espera_flag_2=false;
 
 unsigned long espera1, espera2;
+
 String espacios;
 
 void setup() {
@@ -46,9 +46,7 @@ switch (state_scrolling_1)
 case mostrar_texto:
 
     Serial.println(subTexto1);
-    // Serial.println(texto1);
     state_scrolling_1=esperar;
-    // espera_flag_1=false;
     espera1=millis();
     break;
 
@@ -91,7 +89,6 @@ case scroll:
     offset2++;
     if(offset2>text2_length-max_length)offset2=0;
     subTexto2= texto2.substring(offset2,min(offset2+max_length, text2_length));
-    // subTexto2=texto2.substring(max(0,text2_length-offset2-max_length),text2_length-offset2);
     state_scrolling_2=mostrar_texto;
     break;
 
